@@ -51,20 +51,22 @@ public class Sender {
     }
 
     private static void sendPost(String requsetIP, String filePath) {
-        //requsetIP = "127.0.0.1";
-        //filePath = "C:\\ECS\\Esca\\Nolan_178";
-        for (int loop = 1; loop <= 10; loop++) {
+        requsetIP = "127.0.0.1";
+        filePath = "C:\\ECS\\Esca\\Nolan_178";
+        //filePath = "C:\\ECS\\Esca\\chunk.txt";
+        for (int loop = 1; loop <= 1; loop++) {
             long startTime = System.nanoTime();
             CloseableHttpClient httpClient = HttpClients.createDefault();
             HttpPost request = new HttpPost("http://" + requsetIP + ":9999");
             request.setHeader("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0");
             try {
-                String customEOF = "###EOF";
+                /*String customEOF = "###EOF";
                 InputStream entityContent = new SequenceInputStream(
                         new FileInputStream(new File(filePath)),
                         new ByteArrayInputStream(customEOF.getBytes()));
-                InputStreamEntity requestEntity = new InputStreamEntity(entityContent);
+                InputStreamEntity requestEntity = new InputStreamEntity(entityContent);*/
 
+                FileEntity requestEntity = new FileEntity(new File(filePath));
                 //FileEntity requestEntity = new FileEntity(new File(filePath), ContentType.create("text/plain", "UTF-8"));
                 requestEntity.setChunked(true);
                 request.setEntity(requestEntity);
@@ -102,7 +104,7 @@ public class Sender {
     }
 
     public static void main(String[] args) {
-        sendPost(args[0], args[1]);
-        //sendPost("", "");
+        //sendPost(args[0], args[1]);
+        sendPost("", "");
     }
 }
