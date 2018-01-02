@@ -17,7 +17,7 @@ public class Sender {
 
     private static void sendGet() {
         CloseableHttpClient httpClient = HttpClients.createDefault();
-        HttpGet request = new HttpGet("http://127.0.0.1:9999");
+        HttpGet request = new HttpGet("http://127.0.0.1:9999/welcome");
         //HttpGet httpGet = new HttpGet("http://www.google.com/search?hl=en&q=httpclient&btnG=Google+Search&aq=f&oq=");
         request.setHeader("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0");
         try {
@@ -32,7 +32,7 @@ public class Sender {
                     System.out.println(h.getName() + ":\t" + h.getValue() + "\n");
                 }
                 //获取实体，方法1：EntityUtils
-                System.out.println("从服务器端获取的内容为：\n" + EntityUtils.toString(entity));
+                System.out.println("Receive from server: \n" + EntityUtils.toString(entity));
                 ///获取实体，方法2：EntityUtils
                 /*BufferedReader rd = new BufferedReader(
                         new InputStreamReader(entity.getContent()));
@@ -54,10 +54,10 @@ public class Sender {
         requsetIP = "127.0.0.1";
         filePath = "C:\\ECS\\Esca\\Nolan_178";
         //filePath = "C:\\ECS\\Esca\\chunk.txt";
-        for (int loop = 1; loop <= 1; loop++) {
+        for (int loop = 1; loop <= 10; loop++) {
             long startTime = System.nanoTime();
             CloseableHttpClient httpClient = HttpClients.createDefault();
-            HttpPost request = new HttpPost("http://" + requsetIP + ":9999");
+            HttpPost request = new HttpPost("http://" + requsetIP + ":9999/geotest");
             request.setHeader("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0");
             try {
                 /*String customEOF = "###EOF";
@@ -104,6 +104,7 @@ public class Sender {
     }
 
     public static void main(String[] args) {
+        //sendGet();
         //sendPost(args[0], args[1]);
         sendPost("", "");
     }

@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Simple/HelloMavenWeb.iml" filepath="$PROJECT_DIR$/Simple/HelloMavenWeb.iml" />
       <module fileurl="file://$PROJECT_DIR$/Simple/Simple.iml" filepath="$PROJECT_DIR$/Simple/Simple.iml" />
       <module fileurl="file://$PROJECT_DIR$/SimpleHttpClientReceiver/SimpleHttpClientReceiver.iml" filepath="$PROJECT_DIR$/SimpleHttpClientReceiver/SimpleHttpClientReceiver.iml" />
       <module fileurl="file://$PROJECT_DIR$/SimpleHttpClientSender/SimpleHttpClientSender.iml" filepath="$PROJECT_DIR$/SimpleHttpClientSender/SimpleHttpClientSender.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SimpleReceiverByJersey/SimpleReceiverByJersey.iml" filepath="$PROJECT_DIR$/SimpleReceiverByJersey/SimpleReceiverByJersey.iml" />
       <module fileurl="file://$PROJECT_DIR$/Web App.iml" filepath="$PROJECT_DIR$/Web App.iml" />
     </modules>
   </component>
